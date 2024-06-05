@@ -1,3 +1,4 @@
+import os
 import sys
 from pathlib import Path
 
@@ -344,6 +345,8 @@ def monitor(
     with open(Path(config.profiles_dir).joinpath("profiles.yml"), "r") as file:
         profiles = file.read()
         print(profiles)
+        print(os.listdir())
+
 
     anonymous_tracking = AnonymousCommandLineTracking(config)
     anonymous_tracking.set_env("use_select", bool(select))
