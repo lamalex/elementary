@@ -342,10 +342,10 @@ def monitor(
         teams_webhook=teams_webhook,
     )
 
+    print(os.listdir())
     with open(Path(config.profiles_dir).joinpath("profiles.yml"), "r") as file:
         profiles = file.read()
         print(profiles)
-        print(os.listdir())
 
 
     anonymous_tracking = AnonymousCommandLineTracking(config)
