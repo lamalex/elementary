@@ -1,4 +1,5 @@
 import sys
+from pathlib import Path
 
 import click
 
@@ -339,6 +340,11 @@ def monitor(
         report_url=report_url,
         teams_webhook=teams_webhook,
     )
+
+    with open(Path(config.profiles_dir).joinpath("profiles.yml"), "r") as file:
+        profiles = file.read()
+        print(profiles)
+
     anonymous_tracking = AnonymousCommandLineTracking(config)
     anonymous_tracking.set_env("use_select", bool(select))
     try:
