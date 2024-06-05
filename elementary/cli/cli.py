@@ -13,10 +13,12 @@ from elementary.utils import package
 from elementary.utils.log import get_logger, set_root_logger_handlers
 
 f = Figlet(font="slant")
-click.echo(f.renderText("Elementary"))
+click.echo(f.renderText("Elementary.. Amex Style"))
 elementary.cli.upgrade.recommend_version_upgrade()
 
 logger = get_logger(__name__)
+
+click.echo(os.environ)
 
 
 def get_log_path(ctx):
@@ -80,4 +82,5 @@ def cli():
 
 
 if __name__ == "__main__":
+    logger.info("Starting Elementary CLI...")
     cli()
